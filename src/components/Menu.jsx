@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MdMenu } from "react-icons/md";
 import { MdOutlineClose } from "react-icons/md";
 
+const links = ["home", "about", "portfolio", "services", "skills", "contact"];
 const Menu = ({ data }) => {
   const [open, setOpen] = useState(false);
   return (
@@ -15,24 +16,14 @@ const Menu = ({ data }) => {
           <MdOutlineClose className="close" onClick={() => setOpen(!open)} />
           <p className="menu_title">Menu</p>
           <ul>
-            <li className="link">
-              <a href="#home">home</a>
+          {
+            links.map((link)=>(
+
+            <li className={`#${link}`}>
+              <a href="#skills">{link}</a>
             </li>
-            <li className="link">
-              <a href="#about">about</a>
-            </li>
-            <li className="link">
-              <a href="#portfolio">portfolio</a>
-            </li>
-            <li className="link">
-              <a href="#services">services</a>
-            </li>
-            <li className="link">
-              <a href="#skills">skills</a>
-            </li>
-            <li className="link">
-              <a href="#contact">contact</a>
-            </li>
+            ))
+          }
           </ul>
           <div className="socials">
             {data &&
