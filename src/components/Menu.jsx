@@ -16,14 +16,11 @@ const Menu = ({ data }) => {
           <MdOutlineClose className="close" onClick={() => setOpen(!open)} />
           <p className="menu_title">Menu</p>
           <ul>
-          {
-            links.map((link)=>(
-
-            <li className={`#${link}`}>
-              <a href="#skills">{link}</a>
-            </li>
-            ))
-          }
+            {links.map((link) => (
+              <li className="link" key={link}>
+                <a href={`#${link}`}>{link}</a>
+              </li>
+            ))}
           </ul>
           <div className="socials">
             {data &&
